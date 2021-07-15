@@ -1,0 +1,82 @@
+<div class="authorization" [formGroup]="loginForm">
+  <h1>LOG IN</h1>
+  <div class="inset">
+    <p>
+      <input
+        type="text"
+        formControlName="username"
+        id="email"
+        placeholder="Username"
+        (keyup.enter)="logIn(); hideShow = true"
+        (click)="hideShow = false">
+    </p>
+    <div *ngIf="
+      loginForm.get('username')!.invalid &&
+      loginForm.get('username')!.errors &&
+      (loginForm.get('username')!.dirty || loginForm.get('username')!.touched)"
+    >
+      <small
+        *ngIf="loginForm.get('username')!.hasError('required')"
+        class="text-danger_username"
+      >
+        This field is required.
+      </small>
+      <small
+        *ngIf="loginForm.get('username')!.hasError('minlength')"
+        class="text-danger_username"
+      >
+        The minimum length is {{minLength}} characters.
+      </small>
+      <small
+        *ngIf="loginForm.get('username')!.hasError('maxlength')"
+        class="text-danger_username"
+      >
+        The maximum length is {{maxLength}} characters.
+      </small>
+    </div>
+    <p>
+      <input
+        type="password"
+        formControlName="password"
+        id="password"
+        placeholder="Password"
+        (keyup.enter)="logIn(); hideShow = true"
+        (click)="hideShow = false">
+    </p>
+    <div *ngIf="loginForm.get('password')!.invalid &&
+        loginForm.get('password')!.errors &&
+        (loginForm.get('password')!.dirty || loginForm.get('password')!.touched)">
+      <small
+        *ngIf="loginForm.get('password')!.hasError('required')"
+        class="text-danger_password"
+      >
+        This field is required.
+      </small>
+      <small
+        *ngIf="loginForm.get('password')!.hasError('minlength')"
+        class="text-danger_password"
+      >
+        The minimum length for this field is {{minLength}} characters.
+      </small>
+      <small
+        *ngIf="loginForm.get('password')!.hasError('maxlength')"
+        class="text-danger_password"
+      >
+        The maximum length for this field is {{maxLength}} characters.
+      </small>
+    </div>
+    <div *ngIf="(authorizationService.isAuthorized$ | async) && hideShow">
+      <small class="text-danger_incorrect">
+        Incorrect username or password.
+      </small>
+    </div>
+  </div>
+  <p class="p-container">
+    <button
+      class="submit_button"
+      [disabled]="loginForm.invalid"
+      (click)="logIn(); hideShow = true">
+      Authorize
+    </button>
+  </p>
+</div>

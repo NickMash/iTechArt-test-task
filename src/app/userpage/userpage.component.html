@@ -1,0 +1,6 @@
+<div class="user__container" *ngIf="userInfo$ | async as userInfo">
+  <div class="user_info name_size">{{userInfo.firstName + ' ' + userInfo.lastName}}</div>
+  <img [src]="userInfo.photo" alt="" width="250px" height="250px">
+  <div class="user_info info_size">City: {{userInfo.city}}</div>
+  <div class="user_info info_size">Date Of Birth: {{date(userInfo.dayOfBirth)}}</div>
+</div>

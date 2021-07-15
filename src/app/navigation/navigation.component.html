@@ -1,0 +1,15 @@
+<nav class="navigation__container">
+  <div
+    class="nav_menu_item"
+    *ngIf="!authorizationService.userToken"
+  >AUTHORIZATION
+  </div>
+  <div *ngIf="authorizationService.userToken" class="alignment_element"></div>
+  <app-menu-item
+    *ngIf="authorizationService.userToken"
+    routerLink="userpage"
+    routerLinkActive="active"
+    [itemName]="'USERPAGE'"
+  ></app-menu-item>
+  <app-login-box *ngIf="authorizationService.userToken"></app-login-box>
+</nav>

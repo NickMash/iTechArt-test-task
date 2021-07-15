@@ -1,0 +1,43 @@
+.nav_menu_item {
+  display: flex;
+  flex-grow: 1;
+  width: 130px;
+  height: 65px;
+  font-size: 110%;
+  font-weight: bold;
+  font-family: Calibri;
+  color: #464f6a;
+  justify-content: center;
+  align-items: center;
+  -webkit-transition: all 0.1s ease;
+  -o-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  -webkit-tap-highlight-color: transparent;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+:host:link,
+:host:visited,
+:host:hover,
+:host:focus,
+:host:active {
+  outline: none;
+}
+.nav_menu_item:hover {
+  cursor: pointer;
+  color: #848a94;
+}
+:host.active .nav_menu_item {
+  color: white;
+  border-bottom: 3px #1242a8 solid;
+}
+:host {
+  width: 130px;
+}
+@media  (max-width: 500px) {
+  .nav_menu_item {
+    height: 35px;
+  }
+}

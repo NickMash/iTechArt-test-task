@@ -1,0 +1,49 @@
+.login_box {
+  width: 130px;
+  display: flex;
+  height: 70px;
+  z-index: 2;
+  right: 0;
+  top: 0;
+}
+
+.guest_name {
+  margin-top: 13px;
+  color: #a6adb7;
+  font-family: Calibri;
+  font-size: 100%;
+  font-weight: bold;
+}
+
+.guest {
+  color: white;
+  font-family: Calibri;
+  font-size: 140%;
+  font-weight: bold;
+}
+.log_out_button {
+  width: 50px;
+  height: 50px;
+  margin: 10px 0 0 10px;
+  background:-webkit-linear-gradient(top, rgba(255, 255, 255, 0.25),transparent);
+  border: #444444 2px solid;
+  color: #bebebe;
+  border-radius: 50%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  -webkit-transition: all 0.005s ease;
+  -o-transition: all 0.005s ease;
+  transition: all 0.005s ease;
+}
+.log_out_button:hover {
+  cursor: pointer;
+  color: white;
+  border: #5e5e5e 2px solid;
+  transform: scale(1.03);
+}
+@media (max-width: 500px) {
+  .login_box {
+    margin-right: -3px;
+  }
+}

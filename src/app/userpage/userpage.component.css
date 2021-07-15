@@ -1,0 +1,18 @@
+.user__container {
+  max-width: 250px;
+  margin: 150px auto 0 auto;
+  color: white;
+}
+.user_info {
+  text-align: center;
+  color: #a6adb7;
+  font-family: Calibri;
+  font-weight: bold;
+  margin: 10px 0 10px 0;
+}
+.name_size {
+  font-size: 180%;
+}
+.info_size {
+  font-size: 130%;
+}
